@@ -1,0 +1,261 @@
+/* ======================================= */
+/* FIX 1: ADJUST BODY BACKGROUND & FONT (Soft Romantic Luxury) */
+/* ======================================= */
+
+:root {
+    /* ... (Variables lainnya sama) ... */
+    --light: #F5F0E6; /* Champagne/Cream Background */
+    /* ... */
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--light); /* PASTIKAN BODY PAKE CREAM/CHAMPAGNE */
+    color: var(--dark);
+    line-height: 1.7; 
+}
+
+
+/* ======================================= */
+/* FIX 2: NAV BAR LOGO (Geser ke Kiri Jauh) */
+/* ======================================= */
+
+.navbar-brand {
+    /* Mendorong logo lebih ke kiri dengan margin negatif jika perlu, tapi biasanya cukup padding container */
+    margin-left: -15px; /* Sedikit geser ke kiri di container */
+}
+
+/* ======================================= */
+/* FIX 3: HERO SECTION (Kontras Background & Centering) */
+/* ======================================= */
+
+.hero-section {
+    /* FIX 1: TINGGI DIBUAT 100% LAYAR (biar dramatis & "wah") */
+    /* Sebelumnya 90vh, sekarang kita full-in 100vh */
+    height: 100vh; 
+    
+    /* Overlay yang lebih soft, jangan terlalu gelap */
+    /* Karena foto lo gagal load, ini yang tampil. Gue bikin overlay lebih soft gold/taupe */
+    background-image: linear-gradient(rgba(79, 65, 52, 0.2), rgba(125, 101, 79, 0.4)), url('../img/hero-stage.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    
+    /* Memastikan Centering tetap aktif */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-section h1 {
+    /* FIX 2: HEADLINE DIBESARKAN (Lebih powerful & premium) */
+    /* Dari 5rem (72px) kita naikkan jadi 6rem (~96px) */
+    font-size: 6rem; 
+    color: var(--light); 
+    /* Tambahkan letter spacing halus agar tidak terlalu padat */
+    letter-spacing: 2px;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.7); /* Shadow lebih kuat biar font menonjol */
+}
+
+.hero-section .lead {
+    /* Lead text juga dibesarkan agar seimbang dengan headline */
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--light);
+}
+
+/* CTA WhatsApp Button */
+.btn-warning {
+    /* Bentuk Pill/Oval untuk kesan smooth (Soft Gold) */
+    background-color: var(--primary) !important; 
+    border-color: var(--primary) !important;
+    color: #000000 !important;
+    border-radius: 50px; 
+    box-shadow: 0 8px 20px rgba(201, 148, 100, 0.5); 
+    padding: 22px 60px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.3s;
+}
+
+.btn-warning:hover {
+    background-color: var(--secondary) !important; 
+    border-color: var(--secondary) !important; 
+    transform: scale(1.02); 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ======================================= */
+/* 4. UTILITY STYLING & WHY US SECTION */
+/* ======================================= */
+
+#why-us {
+    padding: 100px 0; 
+    background-color: var(--light); /* Konsisten dengan background body */
+}
+
+#why-us h2 {
+    color: var(--dark);
+}
+
+#why-us i {
+    color: var(--primary); /* Ikon Gold */
+    font-size: 3.5rem; 
+}
+
+/* Card Styling for Packages (Smooth & Elegant) */
+.package-card {
+    background-color: var(--light);
+    color: var(--dark);
+    border: 1px solid #EEE;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); 
+    transition: all 0.3s;
+}
+
+.package-card:hover {
+    border-color: var(--primary); 
+    box-shadow: 0 8px 20px rgba(201, 148, 100, 0.3);
+    transform: translateY(-5px);
+}
+
+.package-card .card-header {
+    background-color: var(--secondary);
+    color: var(--light);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* ... (Bagian Lain di style.css) ... */
+
+/* Card Styling for Packages (Smooth & Elegant) */
+.package-card {
+    background-color: var(--light); /* Cream/Champagne */
+    color: var(--dark);
+    border: 1px solid #EEE;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); 
+    transition: all 0.3s;
+}
+
+.package-card:hover {
+    border-color: var(--primary); /* Border Soft Gold saat hover */
+    box-shadow: 0 8px 20px rgba(201, 148, 100, 0.3); /* Shadow Soft Gold */
+    transform: translateY(-5px);
+}
+
+.package-card .card-header {
+    background-color: var(--secondary); /* Muted Taupe */
+    color: var(--light);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* Styling tambahan untuk gambar card */
+.package-card .card-img-top {
+    /* Paksa Tinggi Gambar Semua Card Sama (misal 250px) */
+    width: 100%; /* Lebar ikut kolom */
+    height: auto; /* TINGGI AKAN IKUT RASIO ASLI GAMBAR */
+    display: block; /* Agar konsisten */
+    transition: transform 0.3s ease;
+    /* FIX INI: Memastikan SELURUH gambar terlihat (tidak ada cropping) */
+    object-fit: contain; 
+    
+    /* Tambahan: Ganti background yang kosong dengan warna solid, misal putih *
+}
+
+/* Opsional: Badge POPULAR */
+.card-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--primary); /* Soft Gold */
+    color: white;
+    padding: 5px 10px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+/* ======================================= */
+/* 6. STYLING TAMBAHAN UNTUK PAGES/GALERI.HTML */
+/* ======================================= */
+
+.gallery-item {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    /* Memaksa aspect ratio 1:1 untuk keseragaman (Kotak Sempurna) */
+    padding-top: 100%; 
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.gallery-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Memastikan gambar mengisi penuh tanpa distorsi */
+    transition: transform 0.5s ease;
+}
+
+.gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(201, 148, 100, 0.85); /* Soft Gold Overlay */
+    color: white;
+    padding: 15px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-align: center;
+    transform: translateY(100%); /* Awalnya sembunyi di bawah */
+    transition: transform 0.4s ease;
+}
+
+/* Hover Effect: Gambar membesar, Overlay muncul */
+.gallery-item:hover .gallery-img {
+    transform: scale(1.05); /* Zoom in sedikit */
+}
+
+.gallery-item:hover .gallery-overlay {
+    transform: translateY(0); /* Overlay muncul */
+}
+
+.gallery-item:hover {
+    box-shadow: 0 8px 20px rgba(201, 148, 100, 0.4);
+}
+
+/* Biar ikon zoom di overlay kelihatan */
+.gallery-overlay i {
+    margin-right: 8px;
+}
+
+/* ======================================= */
+/* 7. STYLING TAMBAHAN UNTUK PAGES/KONTAK.HTML */
+/* ======================================= */
+
+.contact-card {
+    background-color: white; /* Card putih untuk menonjol di background cream */
+    border: 1px solid #E0E0E0;
+    transition: all 0.3s;
+}
+
+.contact-card:hover {
+    border-color: var(--primary);
+    box-shadow: 0 5px 15px rgba(201, 148, 100, 0.2) !important;
+}
+
+/* Biar ikon di kontak sama dengan ikon di Why Us */
+.contact-card i {
+    color: var(--primary); /* Ikon Soft Gold */
+}
+}
